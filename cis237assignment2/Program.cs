@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Kyle Sherman
+// CIS 237
+// Due 10/6/2016
+
+// standard imports
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +24,9 @@ namespace cis237assignment2
             /// <summary>
             /// Starting Coordinates.
             /// </summary>
+            // since array indexes start at zero, this 
+            // will start the point 1 over and 1 down
+            // from the upper left corner
             const int X_START = 1;
             const int Y_START = 1;
 
@@ -50,11 +58,25 @@ namespace cis237assignment2
             char[,] maze2 = transposeMaze(maze1);
 
             /// <summary>
-            /// Tell the instance to solve the first maze with the passed maze, and start coordinates.
+            /// Tell the instance to solve the first maze with 
+            /// the passed maze, and start coordinates.
             /// </summary>
+            // call the maze solver passing through the first(original) maze
             mazeSolver.SolveMaze(maze1, X_START, Y_START);
 
+            // clear the console 
+            // don't continue until the user presses a key
+            
+            Console.WriteLine("Press any key to read the next array");
+            Console.ReadKey();
+            Console.Clear();
+
+            /// <summary>
+            /// Tell the instance to solve the second(transposed)
+            /// maze with the passed maze, and start coordinates.
+            /// </summary>
             //Solve the transposed maze.
+            // call the maze solver passing through the second(transposed) maze
             mazeSolver.SolveMaze(maze2, X_START, Y_START);
 
         }
@@ -77,8 +99,24 @@ namespace cis237assignment2
         /// <returns>transposedMaze</returns>
         static char[,] transposeMaze(char[,] mazeToTranspose)
         {
-            //Write code her to create a transposed maze.
-            return new char[1, 1];
+            // create a new char array (maze) that is the same size as the first array
+            char[,] maze = new char[mazeToTranspose.GetLength(0), mazeToTranspose.GetLength(1)];
+
+            int x, y;
+            // for loop that iterates throfuth the rows (x) of the array
+            for (x = 0; x <= 11; x++)
+            {
+                // for loop that iterates throfuth the columns (y) of the array
+                for (y = 0; y <= 11; y++)
+                {
+                    // actively relaces each index from the old array with
+                    // the opposite index into mazeTranspose
+                    maze[x, y] = mazeToTranspose[y, x];
+                }
+            }
+            // returns the new maze after 
+            // completing the for loop
+            return maze;
         }
     }
 }
