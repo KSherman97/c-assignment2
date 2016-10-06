@@ -68,8 +68,8 @@ namespace cis237assignment2
             // don't continue until the user presses a key
             
             Console.WriteLine("Press any key to read the next array");
-            Console.ReadKey();
-            Console.Clear();
+            Console.ReadKey();  // wait for the user to press a key
+            Console.Clear();    // clear the contents of the array
 
             /// <summary>
             /// Tell the instance to solve the second(transposed)
@@ -99,14 +99,16 @@ namespace cis237assignment2
         /// <returns>transposedMaze</returns>
         static char[,] transposeMaze(char[,] mazeToTranspose)
         {
-            // create a new char array (maze) that is the same size as the first array
+            // create a new char array (maze) that is the same size(dimensions) as the first array
+            // zero ferences the left side of the comma and 1 represents the right
             char[,] maze = new char[mazeToTranspose.GetLength(0), mazeToTranspose.GetLength(1)];
 
+            // create two ints for the for loop
             int x, y;
-            // for loop that iterates throfuth the rows (x) of the array
+            // for loop that iterates through the rows (x) of the array
             for (x = 0; x <= 11; x++)
             {
-                // for loop that iterates throfuth the columns (y) of the array
+                // for loop that iterates through the columns (y) of the array
                 for (y = 0; y <= 11; y++)
                 {
                     // actively relaces each index from the old array with

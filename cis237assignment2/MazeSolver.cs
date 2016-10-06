@@ -52,6 +52,8 @@ namespace cis237assignment2
             isMazeSolved = false;   // initialize isMazeSolved to false
 
             printMaze();            // call the print maze method
+
+            // we pass the starting(entry point)  as the xpos and ypos
             mazeTraversal(xStart, yStart);  // call the mazeTraversal method
 
             // change the console text color to red: From https://msdn.microsoft.com/en-us/library/system.console.foregroundcolor(v=vs.110).aspx
@@ -76,21 +78,23 @@ namespace cis237assignment2
             printMaze();                        // print the maze
             
             // if the current possition is within the walls of the array (not solved)
-            if (xPosition != 11 && xPosition != 0 && yPosition != 11 && yPosition != 0 && !isMazeSolved)
+            // as lont as the x and y are within the boundries of the maze and the
+            // maze hasn't been solved.
+            if (xPosition != 11 && xPosition > -1 && yPosition != 11 && yPosition > -1 && !isMazeSolved)
             {
-                if (maze[xPosition, yPosition + 1] == '.')      // check if the char above is a .
+                if (maze[xPosition, yPosition + 1] == '.')      // check if the maze location above the current  location is a .
                 {
                     mazeTraversal(xPosition, yPosition + 1);    // if so then move up 1
                 }
-                if (maze[xPosition, yPosition - 1] == '.')      // check if the char below is a .
+                if (maze[xPosition, yPosition - 1] == '.')      // check if the maze location below the current  location is a .
                 {
                     mazeTraversal(xPosition, yPosition - 1);    // if so then move down 1
                 }
-                if (maze[xPosition + 1, yPosition] == '.')      // check if the char to the right is a .
+                if (maze[xPosition + 1, yPosition] == '.')      // check if the maze location to the right of the current  location is a .
                 {
                     mazeTraversal(xPosition + 1, yPosition);    // if so then move right 1
                 }
-                if (maze[xPosition - 1, yPosition] == '.')      // check if the char to the left is a .
+                if (maze[xPosition - 1, yPosition] == '.')      // check if the maze location to the left of the current  location is a .
                 {
                     mazeTraversal(xPosition - 1, yPosition);    // if so then move left 1
                 }
@@ -128,7 +132,7 @@ namespace cis237assignment2
             int i, j;
             // for loop, i(rows) and j(columns)
             for (i = 0; i < 12; i++)
-            {
+            { 
                 for (j = 0; j < 12; j++)
                 {
                     Console.Write("{0}", maze[i, j]); // print out the current index
@@ -165,25 +169,25 @@ namespace cis237assignment2
                         else
                         {
                             yPosition--;
-                            correctPath = correctPath || mazeTraversal(xPosition, yPosition);
+                            mazeTraversal(xPosition, yPosition);
                         }
                     }
                     else
                     {
                         yPosition++;
-                        correctPath = correctPath || mazeTraversal(xPosition, yPosition);
+                        mazeTraversal(xPosition, yPosition);
                     }
                 }
                 else
                 {
                     xPosition--;
-                    correctPath = correctPath || mazeTraversal(xPosition, yPosition);
+                    mazeTraversal(xPosition, yPosition);
                 }
             }
             else
             {
                 xPosition++;
-                correctPath = correctPath || mazeTraversal(xPosition, yPosition);
+                mazeTraversal(xPosition, yPosition);
             }
             if(maze[row, column] == '.')
             {
