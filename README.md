@@ -1,7 +1,9 @@
 # Assignment 2 - Recursion to solve a maze
 ## Due 10-04-2016
+Adjusted due date: 10/6/2016
 
 ## Author
+Kyle Sherman
 
 ## Description
 
@@ -41,5 +43,11 @@ Don't forget that you must have a base case for your recursive method or you wil
 | **Total**           | **100**|
 
 ## Outside Resources Used
+[https://msdn.microsoft.com/en-us/library/system.console.foregroundcolor(v=vs.110).aspx](Changing console colors)
+
+[https://www.cs.bu.edu/teaching/alg/maze/](Generic PSudocode recursive backtracking algorithm)
+
+[http://www.astrolog.org/labyrnth/algrithm.htm](List of maze algorithms) Used for personal research into alternative methods
 
 ## Known Problems, Issues, And/Or Errors in the Program
+No known issues
