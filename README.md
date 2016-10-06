@@ -43,11 +43,11 @@ Don't forget that you must have a base case for your recursive method or you wil
 | **Total**           | **100**|
 
 ## Outside Resources Used
-[https://msdn.microsoft.com/en-us/library/system.console.foregroundcolor(v=vs.110).aspx](Changing console colors)
+[Changing console colors](https://msdn.microsoft.com/en-us/library/system.console.foregroundcolor(v=vs.110).aspx)
 
-[https://www.cs.bu.edu/teaching/alg/maze/](Generic PSudocode recursive backtracking algorithm)
+[Generic PSudocode recursive backtracking algorithm](https://www.cs.bu.edu/teaching/alg/maze/)
 
-[http://www.astrolog.org/labyrnth/algrithm.htm](List of maze algorithms) Used for personal research into alternative methods
+[List of maze algorithms](http://www.astrolog.org/labyrnth/algrithm.htm) Used for personal research into alternative methods
 
 ## Known Problems, Issues, And/Or Errors in the Program
 No known issues
